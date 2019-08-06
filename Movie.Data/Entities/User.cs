@@ -24,7 +24,5 @@ namespace Movie.Data.Entities
         public string Password { get; set; }
 
         public virtual ICollection<MovieRating> MovieRatings { get; set; }
-        public DateTime Date { get; internal set; }
-        public string Mail { get; internal set; }
     }
 }

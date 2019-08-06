@@ -32,7 +32,8 @@ namespace Movie.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> Register(User item)
         {
-            await _userService.Register(item.Name, item.Surname, item.Birthday, item.Mail, item.Password);
+            await _userService.Register(item.Name, item.Surname, item.Birthday, item.Email, item.Password);
+
             return Ok(item);
         }
 

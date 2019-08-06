@@ -144,7 +144,7 @@ export default {
           name: vm.input.name,
           surname: vm.input.surname,
           date: vm.input.birthday,
-          mail: vm.input.email,
+          email: vm.input.email,
           password: vm.input.password
         };
 

@@ -1,6 +1,6 @@
 import { createDecipher } from "crypto";
 
-const apiUrl = 'http://localhost:62324/api/';
+const apiUrl = 'http://localhost:5000/api/';
 
 export default {
     data() {

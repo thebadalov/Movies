@@ -11,7 +11,7 @@ namespace Movie.Data.Services
     public interface IUserService
     {
          Task<User> Authenticate(string email, string password);
-         Task<User> Register(string name, string surname, DateTime birthday, string mail, string password);
+         Task<User> Register(string name, string surname, DateTime birthday, string email, string password);
          Task<IEnumerable<User>> GetAll();
     }
 
@@ -31,7 +31,7 @@ namespace Movie.Data.Services
                 throw new System.Exception("Your email or password doesn't have to be Null!!");
             }
 
-            return await _userContext.Users.FirstOrDefaultAsync(x => x.Mail == email && x.Password == password);
+            return await _userContext.Users.FirstOrDefaultAsync(x => x.Email == email && x.Password == password);
         }
 
         public Task<IEnumerable<User>> GetAll()
@@ -39,14 +39,14 @@ namespace Movie.Data.Services
             throw new System.NotImplementedException();
         }
 
-        public async Task<User> Register(string name, string surname, DateTime birthday, string mail, string password)
+        public async Task<User> Register(string name, string surname, DateTime birthday, string email, string password)
         {
             var user = new User
             {
                 Name = name,
                 Surname = surname,
                 Birthday = birthday,
-                Mail = mail,
+                Email = email,
                 Password = password
             };
 

@@ -44,12 +44,10 @@ namespace Movie.Api
                 });
             });
 
-            services.AddSingleton<MovieContext>();
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddAuthentication("BasicAuthentication")
-               .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+            services.AddAuthentication("Basic")
+               .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("Basic", null);
 
             services.AddScoped<IUserService, UserService>();
         }
@@ -57,7 +55,6 @@ namespace Movie.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-          
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -67,9 +64,6 @@ namespace Movie.Api
 
             app.UseAuthentication();
 
-            app.UseMvc();
-
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
