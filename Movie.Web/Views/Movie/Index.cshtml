@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Movie.Contract.Models.MovieModel>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Movie</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Movie.Web</title>
+
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/User/Index">Sign In</a></li>
+                    <li><a href="/User/SignUp">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <html lang="en">
+        <body class="text-center">
+            @*@Html.BeginForm("Home", "SignIn")
+                {
+                    @Html.TextBoxFor(x=> x.Title)
+                }*@
+
+
+            <form class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">Add Movie</h1><br>
+                <label for="inputTitle" class="sr-only">MovieKind</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Movie Title" required autofocus>
+                <label for="inputKind" class="sr-only">MovieKind</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Movie Kind" required autofocus>
+
+                <label for="inputReleasAt" class="sr-only">ReleasAt</label>
+                <input type="date" id="inputReleasAt" class="form-control" placeholder="ReleasAt" required autofocus>
+                <label for="inputEndAt" class="sr-only">EndAt</label>
+                <input type="date" id="inputEndAt" class="form-control" placeholder="EndAt" required>
+                <label for="inputDuration" class="sr-only">Duration</label>
+                <input type="text" id="inputDuration" class="form-control" placeholder="Duration" required>
+                <label for="inputDescription" class="sr-only">Description</label>
+                <input type="text" id="inputDescription" class="form-control" placeholder="Description" required>
+                <label for="inputPgRating" class="sr-only">PgRating</label>
+                <input type="text" id="inputPgRating" class="form-control" placeholder="PgRating" required>
+                <label for="inputPhoto" class="sr-only">Photo</label>
+                <input type="url" id="inputPhoto" class="form-control" placeholder="Photo" required>
+                <br /><br />
+                <button class="btn btn-lg btn-primary" type="submit">Add</button>
+                <br /><br />
+                <p>
+                    <a href="/Home/Index" class="btn  btn-lg btn-primary my-2">Home</a>
+
+                </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+            </form>
+        </body>
+    </html>
+
+</div>
+
+
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
+</body>
+</html>
+

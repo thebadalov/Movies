@@ -6,8 +6,6 @@ namespace Movie.Data.Entities
 {
     public class Genre : Entity
     {
-        [Required]
-        [Column(TypeName = "nvarchar(250)")]
         public string Name { get; set; }
 
         public virtual ICollection<MovieGenre> MovieGenres { get; set; }

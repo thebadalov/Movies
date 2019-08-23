@@ -1,38 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Movie.Contract.Services;
 using Movie.Web.Models;
+using System.Diagnostics;
 
 namespace Movie.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IMovieService _movieService; // servis çagırma
+        private readonly ISeriesService _seriesService;
+
+        public HomeController(IMovieService movieService, ISeriesService seriesService)
+        {
+            _movieService = movieService;
+            _seriesService = seriesService;
+        }
+
+
         public IActionResult Index()
         {
+
+            
+            /* var context = new MovieContext();
+                 var movies =
+                     await context.Movie
+                     .Select(x => new MovieViewModel
+                     {
+                         Title = x.Title,
+                         MovieType = x.MovieType,
+                         MovieKind = x.MovieKind,
+                         Duration = x.Duration,
+
+
+                     }).ToListAsync();  */
+
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
 
-            return View();
-        }
+        //public IActionResult Movie()
+        //{
+        //    var movies = _movieService.GetMovies();
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
+        //    return View();
+        //}
+        //public IActionResult Series()
+        //{
 
-            return View();
-        }
+        //    var series = _seriesService.GetSeries();
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        //    return View();
+        //}
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

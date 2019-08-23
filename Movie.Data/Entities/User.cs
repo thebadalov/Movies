@@ -7,22 +7,18 @@ namespace Movie.Data.Entities
 {
     public class User : Entity
     {
-        [Required]
-        [Column(TypeName = "nvarchar(250)")]
+        
         public string Name { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
         public string Surname { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; } // null olabilir
 
-        [Column(TypeName = "nvarchar(250)")]
         public string Email { get; set; }
 
-        [Column(TypeName = "nvarchar(250)")]
         public string Password { get; set; }
 
         public virtual ICollection<MovieRating> MovieRatings { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

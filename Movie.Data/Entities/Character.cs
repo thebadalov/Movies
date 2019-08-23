@@ -7,18 +7,14 @@ namespace Movie.Data.Entities
 {
     public class Character : Entity
     {
-        [Column(TypeName = "nvarchar(250)")]
-        public string Name { get; set; }
-
-        [Required]
-        [Column(TypeName = "nvarchar(250)")]
+        public int MovieId { get; set; }
+        public int PersonId { get; set; }
+        public string Name { get; set; }     
         public string Surname { get; set; }
 
-        [Required]
-        [Column(TypeName = "nvarchar(250)")]
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }  // null olabilir anlamına gelıyor.
 
-        public virtual ICollection<MoviePerson> MoviePersons { get; set; }
-        public virtual ICollection<MovieEpisodePersonCharacter> MovieEpisodePersonCharacters { get; set; }
+        public virtual Movie Movie { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Movie.Data.Entities
+namespace Movie.Web.Models
 {
-    public class Movie : Entity
+    public class SeriesViewModel
     {
-
         public string Title { get; set; }
 
         public string MovieType { get; set; }
@@ -24,13 +25,5 @@ namespace Movie.Data.Entities
         public int PGRating { get; set; }
 
         public string Photo { get; set; }
-
-        public virtual ICollection<Character> Characters{ get; set; }
-        public virtual ICollection<MovieRating> MovieRatings { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<MovieGenre> MovieGenres { get; set; }
-
-
-
     }
 }
